@@ -1,5 +1,5 @@
 [run]
-source = cnvrg_extras
+source = src
 
 [report]
 exclude_lines =
