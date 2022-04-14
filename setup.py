@@ -1,3 +1,4 @@
+"""The setup file"""
 import re
 import setuptools
 
