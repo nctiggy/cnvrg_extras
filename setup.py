@@ -1,5 +1,5 @@
-import setuptools
 import re
+import setuptools
 
 
 VERSIONFILE = "cnvrg_extras/_version.py"
