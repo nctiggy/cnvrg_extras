@@ -1,9 +1,11 @@
+"""System module."""
 import logging
 import os
 from ._version import __version__
 
 
 def get_module_logger(mod_name):
+    """This function generates the logger"""
     logger = logging.getLogger(mod_name)
     handler = logging.StreamHandler()
     formatter = logging.Formatter(
@@ -16,4 +18,4 @@ def get_module_logger(mod_name):
 
 main_logger = get_module_logger(__name__)
 
-main_logger.debug(f"Module Version: {__version__}")
+main_logger.debug("Module Version: %s", __version__)
