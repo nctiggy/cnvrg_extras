@@ -1,0 +1,29 @@
+name: pytest
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-pytest:
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Install pytest
+        run: python -m pip install --upgrade pytest
+      - name: Install pytest-cov
+        run: python -m pip install --upgrade pytest-cov
+      - name: run pytest
+        run: pytest --cov=cnvrg-extras tests/*.py

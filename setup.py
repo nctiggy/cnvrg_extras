@@ -3,7 +3,7 @@ import re
 import setuptools
 
 
-VERSIONFILE = "cnvrg_extras/_version.py"
+VERSIONFILE = "src/_version.py"
 with open(VERSIONFILE, "rt", encoding="utf-8") as f:
     verstrline = f.read()
 VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
@@ -17,7 +17,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="cnvrg_extras",  # Replace with your own username
+    name="cnvrg-extras",  # Replace with your own username
     version=verstr,
     author="Craig Smith",
     author_email="craig.smith@cnvrg.io",
